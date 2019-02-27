@@ -1,0 +1,7 @@
+Company: Douglas.txt
+___________________________________________________________________
+Bernard Smith                         30             Douglas             581.250
+Kimberly Macias                       50             Douglas             1820.00
+Ryan Ward                            150             Douglas             3281.00
+
+Total Pay: $5682.25
