@@ -142,7 +142,7 @@ for (unsigned int i = 0; i < Empvect.size()-1; i++)
 if (name == Empvect.at(i).getCompanyName())
 {
 outputfile << showpoint;
-outputfile << setw(20)<< left << Empvect.at(i).fullName() << setw(20) << right << Empvect.at(i).getEmployeeId() << right << setw(20) << Empvect.at(i).getCompanyName() << right << setw(20) <<  Empvect.at(i).totalPay() << endl;
+outputfile << setw(20)<< left << Empvect.at(i).fullName() << setw(20) << right << Empvect.at(i).getEmployeeId() << right << setw(20) << Empvect.at(i).getCompanyName() << right << setw(20) << "$" << Empvect.at(i).totalPay() << endl;
  
 totalpay += Empvect.at(i).totalPay();
 
