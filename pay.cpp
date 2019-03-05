@@ -5,6 +5,7 @@
 #include <fstream>
 #include "iostream"
 #include <iomanip>
+#include <algorithm>
 
 using namespace std;
 
@@ -22,6 +23,7 @@ vector<string> companyNames;
 
 readData(employees);
 getCompanies(employees,companyNames);
+
 PrintHighestPaid(employees);
 
 seperateAndSave(employees, companyNames);
@@ -29,6 +31,8 @@ seperateAndSave(employees, companyNames);
 
 }
 
+
+//function 1
 void readData(vector<Person> &Empvect)
 {
 
@@ -65,22 +69,43 @@ myfile.close();
 
 }
 
-
 }
+
+
 
 void getCompanies(vector<Person> &Empvect,vector<string> &compVect)
 {
 
-for (unsigned int i = 0; i < Empvect.size(); i++)
+string test;
 
+for (unsigned int i = 0; i < Empvect.size(); i++)
 {
 
 compVect.push_back(Empvect.at(i).getCompanyName());
 
+
 }
+
+for (unsigned int i = 0; i < compVect.size(); i++)
+{
+
+sort(compVect.begin(),compVect.end());
+
+
+compVect.erase( unique (compVect.begin(), compVect.end() ),compVect.end() );
+
 }
 
 
+}
+
+
+
+
+
+
+
+//Function 2
 
 void PrintHighestPaid(vector<Person> &Empvect)
 {
@@ -118,6 +143,9 @@ cout << "Total Pay: $" << total <<endl;
 }
 
 
+
+// Function 3
+
 void seperateAndSave(vector<Person> &Empvect,vector<string> &compVect){
 string name;
 
@@ -129,9 +157,7 @@ name = compVect.at(i);
 
 
 ofstream outputfile (name+".txt");
-ifstream inputfile;
 
-inputfile.open(name+".txt");
 
 outputfile <<"Company: "<< name << ".txt"<< endl;
 outputfile << "___________________________________________________________________" << endl;
