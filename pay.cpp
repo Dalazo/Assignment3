@@ -11,7 +11,7 @@ using namespace std;
 
 void readData(vector<Person> &Empvect);
 void getCompanies(vector<Person> &Empvect,vector<string> &compVect);
-void PrintHighestPaid(vector<Person> &Empvect);
+void printHighestPaid(vector<Person> &Empvect);
 void seperateAndSave(vector<Person> &Empvect,vector<string> &compVect);
 
 
@@ -24,7 +24,7 @@ vector<string> companyNames;
 readData(employees);
 getCompanies(employees,companyNames);
 
-PrintHighestPaid(employees);
+printHighestPaid(employees);
 
 seperateAndSave(employees, companyNames);
 
@@ -107,7 +107,7 @@ compVect.erase( unique (compVect.begin(), compVect.end() ),compVect.end() );
 
 //Function 2
 
-void PrintHighestPaid(vector<Person> &Empvect)
+void printHighestPaid(vector<Person> &Empvect)
 {
 
 int counter = 0;
